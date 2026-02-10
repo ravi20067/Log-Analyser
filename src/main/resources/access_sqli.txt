@@ -1,0 +1,12 @@
+203.0.113.21 - - [10/Feb/2026:09:12:01 +0000] "GET /search?q=laptop HTTP/1.1" 200 5321 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+203.0.113.21 - - [10/Feb/2026:09:12:04 +0000] "GET /product?id=42 HTTP/1.1" 200 6211 "https://example.com/search?q=laptop" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+198.51.100.99 - - [10/Feb/2026:09:13:11 +0000] "GET /login?user=admin'-- HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:13 +0000] "GET /login?user=admin'%20OR%201=1-- HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:15 +0000] "GET /login?user=admin'%20OR%20'1'='1 HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:18 +0000] "POST /login HTTP/1.1" 403 512 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+198.51.100.99 - - [10/Feb/2026:09:13:25 +0000] "GET /product?id=1%20UNION%20SELECT%20username,password%20FROM%20users-- HTTP/1.1" 500 2048 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:28 +0000] "GET /product?id=1%27%20UNION%20SELECT%20NULL,NULL-- HTTP/1.1" 500 2048 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+203.0.113.45 - - [10/Feb/2026:09:14:02 +0000] "GET /contact HTTP/1.1" 200 4123 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"

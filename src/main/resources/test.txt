@@ -1,0 +1,59 @@
+203.0.113.10 - - [10/Feb/2026:08:41:12 +0000] "GET / HTTP/1.1" 200 8421 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+203.0.113.10 - - [10/Feb/2026:08:41:14 +0000] "GET /css/style.css HTTP/1.1" 200 2143 "https://example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+203.0.113.10 - - [10/Feb/2026:08:41:15 +0000] "GET /js/app.js HTTP/1.1" 200 3891 "https://example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+198.51.100.77 - - [10/Feb/2026:08:42:01 +0000] "GET /login HTTP/1.1" 200 4120 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:03 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:04 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:05 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:06 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:07 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:08 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:09 +0000] "POST /login HTTP/1.1" 401 523 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.77 - - [10/Feb/2026:08:42:10 +0000] "POST /login HTTP/1.1" 429 276 "https://example.com/login" "Mozilla/5.0 (X11; Linux x86_64)"
+
+203.0.113.15 - - [10/Feb/2026:08:43:22 +0000] "GET /products HTTP/1.1" 200 6512 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"
+203.0.113.15 - - [10/Feb/2026:08:43:25 +0000] "GET /product/42 HTTP/1.1" 200 7123 "https://example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"
+203.0.113.21 - - [10/Feb/2026:09:12:01 +0000] "GET /search?q=laptop HTTP/1.1" 200 5321 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+203.0.113.21 - - [10/Feb/2026:09:12:04 +0000] "GET /product?id=42 HTTP/1.1" 200 6211 "https://example.com/search?q=laptop" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+198.51.100.99 - - [10/Feb/2026:09:13:11 +0000] "GET /login?user=admin'-- HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:13 +0000] "GET /login?user=admin'%20OR%201=1-- HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:15 +0000] "GET /login?user=admin'%20OR%20'1'='1 HTTP/1.1" 500 1024 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:18 +0000] "POST /login HTTP/1.1" 403 512 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+198.51.100.99 - - [10/Feb/2026:09:13:25 +0000] "GET /product?id=1%20UNION%20SELECT%20username,password%20FROM%20users-- HTTP/1.1" 500 2048 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.99 - - [10/Feb/2026:09:13:28 +0000] "GET /product?id=1%27%20UNION%20SELECT%20NULL,NULL-- HTTP/1.1" 500 2048 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+203.0.113.45 - - [10/Feb/2026:09:14:02 +0000] "GET /contact HTTP/1.1" 200 4123 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"
+203.0.113.31 - - [10/Feb/2026:10:05:12 +0000] "GET / HTTP/1.1" 200 8451 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+203.0.113.31 - - [10/Feb/2026:10:05:14 +0000] "GET /assets/main.css HTTP/1.1" 200 2140 "https://example.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+198.51.100.123 - - [10/Feb/2026:10:06:01 +0000] "GET /search?q=%3Cscript%3Ealert(1)%3C%2Fscript%3E HTTP/1.1" 200 532 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.123 - - [10/Feb/2026:10:06:03 +0000] "GET /search?q=%22%3E%3Cscript%3Ealert(document.cookie)%3C%2Fscript%3E HTTP/1.1" 200 548 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.123 - - [10/Feb/2026:10:06:06 +0000] "GET /profile?name=%3Cimg%20src%3Dx%20onerror%3Dalert(1)%3E HTTP/1.1" 200 611 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.123 - - [10/Feb/2026:10:06:09 +0000] "GET /comments?msg=%3Csvg%20onload%3Dalert(1)%3E HTTP/1.1" 200 590 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+198.51.100.123 - - [10/Feb/2026:10:06:12 +0000] "POST /feedback HTTP/1.1" 403 312 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+198.51.100.123 - - [10/Feb/2026:10:06:18 +0000] "GET /search?q=%3Cbody%20onload%3Dalert(1)%3E HTTP/1.1" 429 276 "-" "Mozilla/5.0 (X11; Linux x86_64)"
+
+203.0.113.44 - - [10/Feb/2026:10:07:02 +0000] "GET /products HTTP/1.1" 200 6512 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"
+203.0.113.44 - - [10/Feb/2026:10:07:05 +0000] "GET /product/12 HTTP/1.1" 200 7128 "https://example.com/products" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_2)"
+Feb 10 11:22:14 web01 sudo: www-data : TTY=unknown ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/bash
+Feb 10 11:22:14 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by www-data(uid=33)
+
+Feb 10 11:22:15 web01 kernel: audit: type=1400 audit(1707564135.221:482): apparmor="DENIED" operation="exec" profile="/usr/sbin/apache2" name="/bin/bash" pid=3124 comm="sudo"
+
+Feb 10 11:22:19 web01 sudo: www-data : TTY=unknown ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/id
+Feb 10 11:22:19 web01 sudo: pam_unix(sudo:session): session closed for user root
+
+Feb 10 11:22:25 web01 sshd[2988]: Accepted password for user1 from 198.51.100.123 port 51233 ssh2
+Feb 10 11:22:26 web01 sshd[2988]: pam_unix(sshd:session): session opened for user user1(uid=1001)
+
+Feb 10 11:23:01 web01 sudo: user1 : TTY=pts/0 ; PWD=/home/user1 ; USER=root ; COMMAND=/usr/bin/python3 /tmp/exploit.py
+Feb 10 11:23:01 web01 sudo: pam_unix(sudo:session): session opened for user root(uid=0) by user1(uid=1001)
+
+Feb 10 11:23:02 web01 kernel: audit: type=1105 audit(1707564182.889:487): pid=3251 uid=0 auid=1001 ses=5 msg='op=capset cap_net_admin+ep'
+
+Feb 10 11:23:10 web01 sudo: pam_unix(sudo:session): session closed for user root
+Feb 10 11:23:10 web01 sshd[2988]: pam_unix(sshd:session): session closed for user user1
