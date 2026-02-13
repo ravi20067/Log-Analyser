@@ -1,0 +1,13 @@
+Feb 14 02:15:01 iPhone CommCenter[98] <Notice>: SIM card changed
+Feb 14 02:15:02 iPhone com.bank.app[456] <Warning>: SIM ICCID mismatch detected
+Feb 14 02:15:03 iPhone com.bank.app[456] <Info>: API Request POST /v1/request-otp
+Feb 14 02:15:04 iPhone networkd[77] <Notice>: Response 200 OK for /v1/request-otp
+Feb 14 02:15:05 iPhone com.bank.app[456] <Warning>: Rapid OTP request pattern detected
+Feb 14 02:15:06 iPhone CommCenter[98] <Notice>: SMS received from BANK-OTP
+Feb 14 02:15:07 iPhone com.bank.app[456] <Warning>: Suspicious OTP auto-fill attempt
+Feb 14 02:15:08 iPhone networkd[77] <Notice>: Response 401 Unauthorized for /v1/verify-otp
+Feb 14 02:15:09 iPhone securityd[89] <Warning>: Multiple OTP validation failures
+Feb 14 02:15:10 iPhone networkd[77] <Notice>: Response 200 OK for /v1/verify-otp
+Feb 14 02:15:11 iPhone com.bank.app[456] <Error>: OTP verified after SIM change
+Feb 14 02:15:12 iPhone fraudd[120] <Error>: SIM swap fraud suspected – account flagged
+Feb 14 02:15:13 iPhone com.bank.app[456] <Notice>: Session terminated due to high risk

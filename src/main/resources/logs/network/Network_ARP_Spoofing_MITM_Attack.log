@@ -1,0 +1,14 @@
+Feb 14 20:15:01 switch01 kernel: arp: 192.168.1.1 is-at 00:0c:29:aa:bb:cc [ether] on eth0
+Feb 14 20:15:02 switch01 kernel: arp: 192.168.1.1 is-at 00:0c:29:dd:ee:ff [ether] on eth0
+Feb 14 20:15:03 switch01 kernel: arp: 192.168.1.10 is-at 00:0c:29:dd:ee:ff [ether] on eth0
+Feb 14 20:15:04 switch01 kernel: arp: Duplicate address detected for 192.168.1.1 on eth0
+Feb 14 20:15:05 switch01 kernel: arp: 192.168.1.25 is-at 00:0c:29:dd:ee:ff [ether] on eth0
+
+Feb 14 20:15:06 ids01 suricata[2850]: [1:2100498:3] ET POLICY Possible ARP Spoofing Attempt [Classification: Potentially Bad Traffic] [Priority: 1] {ARP} 00:0c:29:dd:ee:ff -> 192.168.1.0/24
+Feb 14 20:15:07 ids01 suricata[2850]: [1:2100499:4] ET POLICY MITM Suspicious ARP Reply [Classification: Potentially Bad Traffic] [Priority: 1] {ARP} 192.168.1.1 is-at 00:0c:29:dd:ee:ff
+
+Feb 14 20:15:08 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:dd:ee:ff SRC=192.168.1.1 DST=192.168.1.25 PROTO=TCP SPT=443 DPT=51522
+Feb 14 20:15:09 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:dd:ee:ff SRC=192.168.1.25 DST=192.168.1.1 PROTO=TCP SPT=51522 DPT=443
+
+Feb 14 20:15:10 sslproxy[3122]: SSL certificate replaced for 192.168.1.25 -> example.com
+Feb 14 20:15:11 ids01 suricata[2850]: [1:2024367:5] ET POLICY Suspicious Self-Signed SSL Certificate [Classification: Potentially Bad Traffic] [Priority: 2] {TCP} 192.168.1.25:51522 -> 93.184.216.34:443

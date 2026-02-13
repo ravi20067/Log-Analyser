@@ -1,0 +1,14 @@
+02-14 00:10:01.112  4587  4587 I RootChecker: Checking su binary existence
+02-14 00:10:01.334  4587  4587 W RootChecker: su binary detected at /system/xbin/su
+02-14 00:10:01.667  4587  4587 I RootChecker: Checking build tags
+02-14 00:10:01.889  4587  4587 W RootChecker: Test-keys build detected (ro.build.tags=test-keys)
+02-14 00:10:02.112  4587  4621 I SafetyNet: Attestation request initiated
+02-14 00:10:02.445  4587  4621 E SafetyNet: CTS profile mismatch detected
+02-14 00:10:02.778  4587  4621 W SecurityMonitor: Magisk binary detected
+02-14 00:10:03.112  4587  4621 E Runtime: Frida server process found on port 27042
+02-14 00:10:03.445  4587  4621 W Debug: android.os.Debug.isDebuggerConnected() = true
+02-14 00:10:03.778  4587  4621 I FileSystem: Attempt to access /system/bin/sh
+02-14 00:10:04.112  4587  4621 W IntegrityCheck: App signature verification failed
+02-14 00:10:04.445  4587  4621 E RootChecker: Root cloaking attempt detected (MagiskHide)
+02-14 00:10:04.778  4587  4621 W SecurityMonitor: Emulator environment detected (goldfish kernel)
+02-14 00:10:05.112  4587  4621 E FraudEngine: Rooted device blocked from login

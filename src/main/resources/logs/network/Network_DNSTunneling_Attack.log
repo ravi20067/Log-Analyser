@@ -1,0 +1,13 @@
+Feb 14 19:20:01 dns01 named[3124]: client 192.168.1.25#55321 (ajd83kd92k3kd8d.malicious-domain.xyz): query: ajd83kd92k3kd8d.malicious-domain.xyz IN A +
+Feb 14 19:20:02 dns01 named[3124]: client 192.168.1.25#55322 (k39dk3k3k2k3.data.malicious-domain.xyz): query: k39dk3k3k2k3.data.malicious-domain.xyz IN TXT +
+Feb 14 19:20:03 dns01 named[3124]: client 192.168.1.25#55323 (dGhpcy1pcy1leGZpbHRyYXRlZC1kYXRh.malicious-domain.xyz): query: dGhpcy1pcy1leGZpbHRyYXRlZC1kYXRh.malicious-domain.xyz IN A +
+Feb 14 19:20:04 dns01 named[3124]: client 192.168.1.25#55324 (ZXhmaWx0cmF0aW9uLnRlc3Q.malicious-domain.xyz): query: ZXhmaWx0cmF0aW9uLnRlc3Q.malicious-domain.xyz IN TXT +
+Feb 14 19:20:05 dns01 named[3124]: client 192.168.1.25#55325 (Y29uZmlkZW50aWFsLmRhdGE.malicious-domain.xyz): query: Y29uZmlkZW50aWFsLmRhdGE.malicious-domain.xyz IN A +
+
+Feb 14 19:20:06 ids01 suricata[2750]: [1:2024219:5] ET DNS Possible DNS Tunneling Attempt [Classification: Potentially Bad Traffic] [Priority: 1] {UDP} 192.168.1.25:55323 -> 8.8.8.8:53
+Feb 14 19:20:07 ids01 suricata[2750]: [1:2024220:4] ET DNS Suspicious Long DNS Query [Classification: Potentially Bad Traffic] [Priority: 2] {UDP} 192.168.1.25:55324 -> 8.8.8.8:53
+
+Feb 14 19:20:08 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=8.8.8.8 LEN=85 TOS=0x00 TTL=64 ID=45231 PROTO=UDP SPT=55326 DPT=53
+Feb 14 19:20:09 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=8.8.8.8 LEN=92 TOS=0x00 TTL=64 ID=45232 PROTO=UDP SPT=55327 DPT=53
+
+Feb 14 19:20:10 dns01 named[3124]: client 192.168.1.25#55328 (QmFzZTY0RW5jb2RlZERhdGE.malicious-domain.xyz): query: QmFzZTY0RW5jb2RlZERhdGE.malicious-domain.xyz IN TXT +

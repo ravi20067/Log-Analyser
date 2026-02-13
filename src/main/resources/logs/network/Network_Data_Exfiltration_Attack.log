@@ -1,0 +1,15 @@
+Feb 14 22:40:01 proxy01 squid[5123]: 1707950401.123  1200 192.168.1.25 TCP_MISS/200 10485760 POST http://185.203.116.99/upload.php - HIER_DIRECT/185.203.116.99 application/octet-stream
+Feb 14 22:40:05 proxy01 squid[5123]: 1707950405.456  1300 192.168.1.25 TCP_MISS/200 15728640 POST http://185.203.116.99/upload.php - HIER_DIRECT/185.203.116.99 application/octet-stream
+Feb 14 22:40:10 proxy01 squid[5123]: 1707950410.789  1250 192.168.1.25 TCP_MISS/200 20971520 POST http://185.203.116.99/upload.php - HIER_DIRECT/185.203.116.99 application/octet-stream
+
+Feb 14 22:40:12 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=185.203.116.99 LEN=1500 TOS=0x00 TTL=64 ID=65001 PROTO=TCP SPT=53321 DPT=80
+Feb 14 22:40:13 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=185.203.116.99 LEN=1500 TOS=0x00 TTL=64 ID=65002 PROTO=TCP SPT=53322 DPT=80
+Feb 14 22:40:14 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=185.203.116.99 LEN=1500 TOS=0x00 TTL=64 ID=65003 PROTO=TCP SPT=53323 DPT=80
+
+Feb 14 22:40:15 ids01 suricata[3050]: [1:2025001:4] ET POLICY Large HTTP POST Possible Data Exfiltration [Classification: Potential Corporate Privacy Violation] [Priority: 1] {TCP} 192.168.1.25:53321 -> 185.203.116.99:80
+Feb 14 22:40:16 ids01 suricata[3050]: [1:2025002:5] ET POLICY Suspicious Outbound Data Transfer [Classification: Potential Corporate Privacy Violation] [Priority: 1] {TCP} 192.168.1.25:53322 -> 185.203.116.99:80
+
+Feb 14 22:40:20 proxy01 squid[5123]: 1707950420.221  1400 192.168.1.25 TCP_MISS/200 52428800 PUT http://185.203.116.99/backup.zip - HIER_DIRECT/185.203.116.99 application/zip
+Feb 14 22:40:21 firewall01 kernel: [UFW ALLOW] IN=eth0 OUT= MAC=00:0c:29:3e:5b:6c SRC=192.168.1.25 DST=185.203.116.99 LEN=1500 TOS=0x00 TTL=64 ID=65004 PROTO=TCP SPT=53330 DPT=80
+
+Feb 14 22:40:25 ids01 suricata[3050]: [1:2025003:6] ET POLICY Possible Data Exfiltration Over HTTP [Classification: Potential Corporate Privacy Violation] [Priority: 1] {TCP} 192.168.1.25:53330 -> 185.203.116.99:80

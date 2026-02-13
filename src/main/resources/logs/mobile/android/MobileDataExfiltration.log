@@ -1,0 +1,16 @@
+02-14 00:40:01.112  4587  4702 I ContentResolver: Querying contacts database
+02-14 00:40:01.445  4587  4702 W PermissionManager: READ_CONTACTS granted to com.fake.utility
+02-14 00:40:02.001  4587  4702 I ContentResolver: Querying SMS inbox content://sms/inbox
+02-14 00:40:02.334  4587  4702 W PermissionManager: READ_SMS granted to com.fake.utility
+02-14 00:40:03.112  4587  4702 I FileSystem: Accessing /data/data/com.bank.app/databases/user.db
+02-14 00:40:03.556  4587  4702 W SQLiteDatabase: Database copied to cache directory
+02-14 00:40:04.001  4587  4702 I OkHttp: --> POST http://185.203.116.45/upload
+02-14 00:40:04.778  4587  4702 I OkHttp: Request body size: 4.2MB
+02-14 00:40:05.223  4587  4702 I OkHttp: <-- 200 OK http://185.203.116.45/upload (1245ms)
+02-14 00:40:05.667  4587  4702 W TrafficStats: High outbound traffic spike detected (4.5MB in 3s)
+02-14 00:40:06.112  4587  4702 I MediaRecorder: Microphone activated in background
+02-14 00:40:07.445  4587  4702 I FileSystem: Creating file /sdcard/recording.wav
+02-14 00:40:08.001  4587  4702 I OkHttp: --> POST http://185.203.116.45/audio
+02-14 00:40:08.778  4587  4702 I OkHttp: <-- 200 OK http://185.203.116.45/audio (932ms)
+02-14 00:40:09.223  4587  4702 W WifiManager: Large upload detected over unsecured WiFi
+02-14 00:40:09.667  4587  4702 E SecurityMonitor: Possible data exfiltration pattern identified

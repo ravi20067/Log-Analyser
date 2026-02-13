@@ -1,0 +1,12 @@
+Feb 13 23:15:01 iPhone com.bank.app[456] <Info>: API Request GET /account
+Feb 13 23:15:02 iPhone networkd[77] <Warning>: TLS handshake failed for api.bank.com
+Feb 13 23:15:02 iPhone com.bank.app[456] <Error>: SSL Pinning validation failed
+Feb 13 23:15:03 iPhone trustd[101] <Warning>: Certificate not trusted: CN=BurpSuite,O=PortSwigger
+Feb 13 23:15:03 iPhone com.bank.app[456] <Notice>: Retrying request with fallback policy
+Feb 13 23:15:04 iPhone networkd[77] <Notice>: Proxy detected at 192.168.1.25:8080
+Feb 13 23:15:05 iPhone securityd[89] <Error>: Hostname mismatch detected
+Feb 13 23:15:06 iPhone SpringBoard[58] <Notice>: Connected to open WiFi network "FreeAirportWiFi"
+Feb 13 23:15:07 iPhone com.bank.app[456] <Warning>: Possible TLS downgrade attack detected
+Feb 13 23:15:08 iPhone WebKit[212] <Error>: Modified response payload integrity check failed
+Feb 13 23:15:09 iPhone networkd[77] <Notice>: DNS response altered for api.bank.com
+Feb 13 23:15:10 iPhone com.bank.app[456] <Warning>: Potential Man-in-the-Middle attack identified

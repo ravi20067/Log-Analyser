@@ -1,0 +1,12 @@
+02-13 22:40:01.112  2456  2456 I SmsReceiver: Incoming SMS from +447911234567
+02-13 22:40:01.115  2456  2456 I SmsReceiver: Message body: "Your bank account locked. Verify at http://bit.ly/secure-bank"
+02-13 22:40:03.445  4587  4587 I ActivityManager: START u0 {act=android.intent.action.VIEW dat=http://bit.ly/secure-bank} from uid 10123
+02-13 22:40:04.001  4587  4621 I chromium: [INFO:CONSOLE(1)] "Redirecting to http://secure-bank-login.xyz", source: http://bit.ly/secure-bank
+02-13 22:40:04.890  4587  4621 W NetworkSecurityConfig: Cleartext HTTP traffic to secure-bank-login.xyz not permitted
+02-13 22:40:05.334  4587  4621 I OkHttp: --> GET http://secure-bank-login.xyz/login
+02-13 22:40:06.221  4587  4621 I chromium: [INFO:CONSOLE(12)] "User submitted credentials", source: http://secure-bank-login.xyz/login
+02-13 22:40:06.890  4587  4621 I OkHttp: --> POST http://secure-bank-login.xyz/api/auth
+02-13 22:40:07.556  4587  4621 I OkHttp: <-- 200 OK http://secure-bank-login.xyz/api/auth (712ms)
+02-13 22:40:08.112  4587  4621 W SafetyNet: Suspicious URL flagged: secure-bank-login.xyz (Reputation: Malicious)
+02-13 22:40:09.445  4587  4621 I WebView: Loading external script http://malicious-domain.xyz/stealer.js
+02-13 22:40:10.778  4587  4621 E Runtime: Possible credential harvesting detected

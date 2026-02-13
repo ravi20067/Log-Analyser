@@ -1,0 +1,17 @@
+02-14 01:10:01.112  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/profile
+02-14 01:10:01.334  4587  4621 I OkHttp: <-- 200 OK https://api.bank.com/v1/profile (210ms)
+02-14 01:10:01.667  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/profile?id=1002
+02-14 01:10:01.889  4587  4621 I OkHttp: <-- 200 OK https://api.bank.com/v1/profile?id=1002 (198ms)
+02-14 01:10:02.112  4587  4621 W RiskEngine: Possible IDOR attempt detected (id increment pattern)
+02-14 01:10:02.445  4587  4621 I OkHttp: --> POST https://api.bank.com/v1/transfer (amount=999999)
+02-14 01:10:02.778  4587  4621 I OkHttp: <-- 403 Forbidden https://api.bank.com/v1/transfer (validation failed)
+02-14 01:10:03.001  4587  4621 W SecurityMonitor: Parameter tampering detected (amount field anomaly)
+02-14 01:10:03.334  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/admin/users
+02-14 01:10:03.667  4587  4621 I OkHttp: <-- 401 Unauthorized https://api.bank.com/v1/admin/users (190ms)
+02-14 01:10:04.001  4587  4621 E JwtParser: Invalid JWT signature detected
+02-14 01:10:04.445  4587  4621 W SecurityMonitor: Expired token reuse attempt
+02-14 01:10:04.778  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/transactions?page=1
+02-14 01:10:05.001  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/transactions?page=2
+02-14 01:10:05.223  4587  4621 I OkHttp: --> GET https://api.bank.com/v1/transactions?page=3
+02-14 01:10:05.556  4587  4621 W RateLimiter: API rate threshold exceeded (50 requests/min)
+02-14 01:10:05.889  4587  4621 E FraudEngine: API abuse pattern confirmed – session blocked

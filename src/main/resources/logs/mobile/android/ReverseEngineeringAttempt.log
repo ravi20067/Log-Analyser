@@ -1,0 +1,14 @@
+02-14 01:40:01.112  4587  4587 I SecurityMonitor: Starting runtime integrity checks
+02-14 01:40:01.334  4587  4587 W SecurityMonitor: Debuggable flag enabled in application manifest
+02-14 01:40:01.667  4587  4621 W Debug: android.os.Debug.isDebuggerConnected() = true
+02-14 01:40:02.001  4587  4621 E AntiTamper: APK signature mismatch detected
+02-14 01:40:02.334  4587  4621 W DexGuard: Unexpected DEX checksum difference
+02-14 01:40:02.778  4587  4621 E FridaDetector: Frida server detected on port 27042
+02-14 01:40:03.112  4587  4621 W RootChecker: ptrace tracing attempt detected
+02-14 01:40:03.445  4587  4621 I FileSystem: Access to /data/app/com.bank.app/base.apk
+02-14 01:40:03.778  4587  4621 W SecurityMonitor: Attempt to load native library libfrida-gadget.so
+02-14 01:40:04.112  4587  4621 E IntegrityCheck: App memory region altered
+02-14 01:40:04.445  4587  4621 W EmulatorDetector: goldfish hardware profile detected
+02-14 01:40:04.778  4587  4621 E AntiTamper: Hooking framework (Xposed) detected
+02-14 01:40:05.112  4587  4621 W SecurityMonitor: Suspicious reflection access to protected API
+02-14 01:40:05.445  4587  4621 E FraudEngine: Reverse engineering activity confirmed – terminating session

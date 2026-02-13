@@ -1,0 +1,21 @@
+Feb 15 18:30:01 webserver sshd[9021]: Accepted password for john from 203.0.113.250 port 60111 ssh2
+Feb 15 18:30:01 webserver sshd[9021]: pam_unix(sshd:session): session opened for user john by (uid=0)
+
+Feb 15 18:30:10 webserver sudo:    john : TTY=pts/0 ; PWD=/home/john ; USER=root ; COMMAND=/bin/bash
+Feb 15 18:30:10 webserver sudo: pam_unix(sudo:session): session opened for user root by john(uid=1001)
+
+Feb 15 18:30:20 webserver audit[9050]: EXECVE argc=3 a0="/bin/rm" a1="-f" a2="/var/log/auth.log"
+Feb 15 18:30:20 webserver audit[9050]: PATH item=0 name="/var/log/auth.log" inode=22011 dev=08:01 mode=0100640 ouid=0 ogid=4
+Feb 15 18:30:20 webserver audit[9050]: SYSCALL arch=c000003e syscall=87 success=yes exit=0 comm="rm" exe="/usr/bin/rm"
+
+Feb 15 18:30:25 webserver audit[9055]: EXECVE argc=3 a0="/usr/bin/truncate" a1="-s" a2="0 /var/log/syslog"
+Feb 15 18:30:25 webserver audit[9055]: PATH item=0 name="/var/log/syslog" inode=22012 dev=08:01 mode=0100644 ouid=0 ogid=4
+
+Feb 15 18:30:30 webserver syslog: root executed command: history -c
+Feb 15 18:30:31 webserver audit[9060]: EXECVE argc=2 a0="/bin/bash" a1="-c history -c"
+
+Feb 15 18:30:35 webserver audit[9065]: EXECVE argc=2 a0="/usr/bin/shred" a1="-u /var/log/auth.log"
+Feb 15 18:30:35 webserver audit[9065]: SYSCALL arch=c000003e syscall=87 success=yes exit=0 comm="shred" exe="/usr/bin/shred"
+
+Feb 15 18:30:40 webserver syslog: rsyslogd: log file /var/log/auth.log rotated
+Feb 15 18:30:45 webserver sshd[9021]: pam_unix(sshd:session): session closed for user john

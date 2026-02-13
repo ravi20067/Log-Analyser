@@ -1,0 +1,14 @@
+Feb 14 02:45:01 iPhone com.fake.utility[456] <Notice>: Background sync service initiated
+Feb 14 02:45:02 iPhone networkd[77] <Notice>: Outbound request GET /v1/status to api.target.com
+Feb 14 02:45:02 iPhone networkd[77] <Notice>: Response 200 OK
+Feb 14 02:45:03 iPhone networkd[77] <Notice>: Outbound request GET /v1/status to api.target.com
+Feb 14 02:45:03 iPhone networkd[77] <Notice>: Response 429 Too Many Requests
+Feb 14 02:45:04 iPhone com.fake.utility[456] <Warning>: Remote command received from 185.203.116.45
+Feb 14 02:45:04 iPhone networkd[77] <Notice>: Outbound request POST /v1/login
+Feb 14 02:45:05 iPhone networkd[77] <Notice>: Response 503 Service Unavailable
+Feb 14 02:45:05 iPhone com.fake.utility[456] <Warning>: High frequency API invocation detected
+Feb 14 02:45:06 iPhone kernel[0] <Notice>: CPU usage spike (80%)
+Feb 14 02:45:07 iPhone networkd[77] <Notice>: Multiple outbound HTTPS sessions established
+Feb 14 02:45:08 iPhone trustd[101] <Warning>: Suspicious repetitive TLS handshakes
+Feb 14 02:45:09 iPhone com.fake.utility[456] <Error>: Coordinated request burst pattern detected
+Feb 14 02:45:10 iPhone fraudd[120] <Error>: Botnet traffic behavior confirmed – device flagged

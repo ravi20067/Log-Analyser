@@ -1,0 +1,16 @@
+02-14 02:40:01.112  4587  4621 I BotService: Background task started for sync operation
+02-14 02:40:01.334  4587  4621 I OkHttp: --> GET https://api.target.com/v1/status
+02-14 02:40:01.445  4587  4621 I OkHttp: <-- 200 OK https://api.target.com/v1/status (120ms)
+02-14 02:40:01.667  4587  4621 I OkHttp: --> GET https://api.target.com/v1/status
+02-14 02:40:01.778  4587  4621 I OkHttp: <-- 200 OK https://api.target.com/v1/status (118ms)
+02-14 02:40:02.001  4587  4621 I OkHttp: --> GET https://api.target.com/v1/status
+02-14 02:40:02.223  4587  4621 I OkHttp: <-- 429 Too Many Requests https://api.target.com/v1/status (95ms)
+02-14 02:40:02.445  4587  4621 W BotController: Command received from C2 185.203.116.45/start-flood
+02-14 02:40:02.667  4587  4621 I OkHttp: --> POST https://api.target.com/v1/login
+02-14 02:40:02.889  4587  4621 I OkHttp: <-- 503 Service Unavailable https://api.target.com/v1/login (88ms)
+02-14 02:40:03.112  4587  4621 I TrafficStats: Outbound packets/sec: 350
+02-14 02:40:03.334  4587  4621 W PowerManager: Abnormal CPU usage detected (85%)
+02-14 02:40:03.556  4587  4621 I OkHttp: --> GET https://api.target.com/v1/transactions
+02-14 02:40:03.778  4587  4621 I OkHttp: <-- 503 Service Unavailable https://api.target.com/v1/transactions (90ms)
+02-14 02:40:04.001  4587  4621 W NetworkSecurityConfig: Excessive outbound HTTPS connections detected
+02-14 02:40:04.223  4587  4621 E SecurityMonitor: Device participating in coordinated traffic flood

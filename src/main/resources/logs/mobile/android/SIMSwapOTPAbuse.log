@@ -1,0 +1,15 @@
+02-14 02:10:01.112  4587  4587 I TelephonyManager: SIM state changed: ABSENT → READY
+02-14 02:10:01.334  4587  4587 W SecurityMonitor: SIM serial number changed (old=8991101200003204512, new=8991109900047832210)
+02-14 02:10:01.667  4587  4621 I OkHttp: --> POST https://api.bank.com/v1/request-otp
+02-14 02:10:02.001  4587  4621 I OkHttp: <-- 200 OK https://api.bank.com/v1/request-otp (210ms)
+02-14 02:10:02.334  4587  4621 W RiskEngine: Multiple OTP requests detected within 30 seconds
+02-14 02:10:02.778  4587  4621 I SmsReceiver: Incoming SMS from BANK-OTP
+02-14 02:10:03.112  4587  4621 W SmsReceiver: OTP auto-read triggered by com.fake.utility
+02-14 02:10:03.445  4587  4621 I OkHttp: --> POST https://api.bank.com/v1/verify-otp
+02-14 02:10:03.778  4587  4621 I OkHttp: <-- 401 Unauthorized https://api.bank.com/v1/verify-otp (invalid OTP)
+02-14 02:10:04.112  4587  4621 W FraudEngine: OTP brute-force pattern detected (5 attempts)
+02-14 02:10:04.445  4587  4621 I OkHttp: --> POST https://api.bank.com/v1/verify-otp
+02-14 02:10:04.778  4587  4621 I OkHttp: <-- 200 OK https://api.bank.com/v1/verify-otp (verified)
+02-14 02:10:05.112  4587  4621 W SecurityMonitor: Successful OTP verification after SIM change
+02-14 02:10:05.445  4587  4621 E FraudEngine: High-risk event – possible SIM swap fraud
+02-14 02:10:05.778  4587  4621 I SessionManager: New session created sessionId=sess_99281

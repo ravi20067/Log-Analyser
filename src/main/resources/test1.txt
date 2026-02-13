@@ -1,0 +1,71 @@
+Feb 10 17:02:44 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.77 DST=192.168.1.10 PROTO=TCP SPT=51233 DPT=3389 SYN
+Feb 10 17:02:45 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.77 DST=192.168.1.10 PROTO=TCP SPT=51234 DPT=22 SYN
+Feb 10 17:02:46 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.77 DST=192.168.1.10 PROTO=TCP SPT=51235 DPT=445 SYN
+LogName: Security
+Source: Microsoft-Windows-Security-Auditing
+EventID: 4625
+Level: Information
+TimeCreated: 2026-02-10T16:42:11Z
+Computer: WIN-SRV01.corp.local
+
+An account failed to log on.
+
+Subject:
+  Security ID: NULL SID
+  Account Name: -
+  Account Domain: -
+
+Logon Type: 10
+
+Account For Which Logon Failed:
+  Account Name: Administrator
+  Account Domain: CORP
+
+Failure Information:
+  Failure Reason: Unknown user name or bad password
+  Status: 0xC000006D
+  Sub Status: 0xC000006A
+
+Network Information:
+  Source Network Address: 203.0.113.77
+  Source Port: 51233
+Feb 10 02:14:33 server1 sshd[2145]: Failed password for invalid user admin from 185.220.101.45 port 53422 ssh2
+Feb 10 02:14:35 server1 sshd[2145]: Failed password for invalid user admin from 185.220.101.45 port 53423 ssh2
+Feb 10 02:14:38 server1 sshd[2145]: Failed password for root from 185.220.101.45 port 53424 ssh2
+Feb 10 02:14:41 server1 sshd[2145]: Failed password for root from 185.220.101.45 port 53425 ssh2
+Feb 10 02:14:45 server1 sshd[2145]: Failed password for user test from 185.220.101.45 port 53426 ssh2
+Feb 10 02:14:50 server1 sshd[2145]: Received disconnect from 185.220.101.45: 11: Bye Bye
+EventID: 4625
+LogName: Security
+Source: Microsoft-Windows-Security-Auditing
+TimeCreated: 2026-02-10T02:18:41Z
+Computer: DC01.corp.local
+
+An account failed to log on.
+
+Subject:
+    Security ID: NULL SID
+    Account Name: -
+    Account Domain: -
+    Logon Type: 10
+
+Account For Which Logon Failed:
+    Account Name: administrator
+    Account Domain: CORP
+
+Failure Information:
+    Failure Reason: Unknown user name or bad password
+    Status: 0xC000006D
+    Sub Status: 0xC000006A
+
+Network Information:
+    Workstation Name: -
+    Source Network Address: 203.0.113.77
+    Source Port: 49833
+Feb 10 18:11:21 dns01 named[2142]: client 198.51.100.88#53321 (aGVsbG8uZXZpbC5leGFtcGxl): query: aGVsbG8uZXZpbC5leGFtcGxl IN TXT +E(0)K
+Feb 10 18:11:23 dns01 named[2142]: client 198.51.100.88#53321 (Y21kLnBpbmc=.evil.example): query: Y21kLnBpbmc=.evil.example IN TXT +E(0)K
+Feb 10 18:11:25 dns01 named[2142]: client 198.51.100.88#53321 (Y2F0IC9ldGMvcGFzc3dk.evil.example): query: Y2F0IC9ldGMvcGFzc3dk.evil.example IN TXT +E(0)K
+Feb 10 18:11:27 dns01 named[2142]: client 198.51.100.88#53321 (c2Vzc2lvbi5rZXk=.evil.example): query: c2Vzc2lvbi5rZXk=.evil.example IN TXT +E(0)K
+Feb 10 18:11:29 dns01 named[2142]: client 198.51.100.88#53321 (ZGF0YS5leGZpbA==.evil.example): query: ZGF0YS5leGZpbA==.evil.example IN TXT +E(0)K
+198.51.100.155 - - [10/Feb/2026:12:30:12 +0000] "GET /download?file=report.pdf HTTP/1.1" 200 6211 "-" "Mozilla/5.0"
+198.51.100.155 - - [10/Feb/2026:12:30:15 +0000] "GET /download?file=../../../../windows/system32/drivers/etc/hosts HTTP/1.1" 403 312 "-" "Mozilla/5.0"

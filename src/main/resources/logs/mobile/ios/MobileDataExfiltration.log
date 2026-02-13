@@ -1,0 +1,14 @@
+Feb 14 00:45:01 iPhone com.fake.utility[456] <Notice>: Accessing Contacts framework
+Feb 14 00:45:02 iPhone com.fake.utility[456] <Warning>: Contacts database export initiated
+Feb 14 00:45:03 iPhone com.fake.utility[456] <Notice>: Accessing SMS database
+Feb 14 00:45:04 iPhone kernel[0] <Warning>: Unauthorized file-read-data /private/var/mobile/Library/SMS
+Feb 14 00:45:05 iPhone com.fake.utility[456] <Notice>: Copying keychain items to temporary buffer
+Feb 14 00:45:06 iPhone securityd[89] <Error>: Keychain access without entitlement
+Feb 14 00:45:07 iPhone networkd[77] <Notice>: Outbound connection to 185.203.116.45:8080
+Feb 14 00:45:08 iPhone networkd[77] <Notice>: Upload size 5.1MB over HTTP
+Feb 14 00:45:09 iPhone com.fake.utility[456] <Warning>: Background microphone recording started
+Feb 14 00:45:10 iPhone com.fake.utility[456] <Notice>: Audio file written to /private/var/mobile/Documents/recording.wav
+Feb 14 00:45:11 iPhone networkd[77] <Notice>: POST /audio to malicious-domain.xyz
+Feb 14 00:45:12 iPhone trustd[101] <Warning>: Untrusted TLS certificate for malicious-domain.xyz
+Feb 14 00:45:13 iPhone com.fake.utility[456] <Error>: Large outbound traffic anomaly detected
+Feb 14 00:45:14 iPhone fraudd[120] <Error>: Sensitive data exfiltration confirmed

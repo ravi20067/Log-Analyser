@@ -1,0 +1,12 @@
+Feb 13 22:45:01 iPhone CommCenter[98] <Notice>: SMS received from +447911234567
+Feb 13 22:45:02 iPhone SpringBoard[58] <Notice>: User tapped URL http://bit.ly/secure-bank
+Feb 13 22:45:03 iPhone MobileSafari[212] <Info>: Navigating to http://secure-bank-login.xyz
+Feb 13 22:45:04 iPhone MobileSafari[212] <Warning>: HTTP connection established without TLS
+Feb 13 22:45:05 iPhone MobileSafari[212] <Info>: Form submission POST /api/auth
+Feb 13 22:45:06 iPhone networkd[77] <Notice>: Outbound connection to 185.203.116.45:80
+Feb 13 22:45:07 iPhone MobileSafari[212] <Warning>: Suspicious domain detected: secure-bank-login.xyz
+Feb 13 22:45:08 iPhone WebKit[212] <Info>: Executing external script stealer.js
+Feb 13 22:45:09 iPhone securityd[89] <Error>: Credential autofill attempted on untrusted domain
+Feb 13 22:45:10 iPhone MobileSafari[212] <Notice>: Redirected to http://malicious-domain.xyz/confirm
+Feb 13 22:45:11 iPhone networkd[77] <Notice>: DNS query for malicious-domain.xyz
+Feb 13 22:45:12 iPhone MobileSafari[212] <Warning>: Possible phishing attempt detected

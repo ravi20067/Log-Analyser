@@ -1,0 +1,17 @@
+package com.Analyser.ENUM;
+
+public enum MobileAttackType {
+
+    MALWARE_INFECTION,
+    PHISHING,
+    MITM,
+    CREDENTIAL_STUFFING,
+    ROOT_JAILBREAK_BYPASS,
+    DATA_EXFILTRATION,
+    API_ABUSE,
+    REVERSE_ENGINEERING,
+    SIM_SWAP,
+    DDOS_VIA_BOTNET,
+    NONE
+}
+

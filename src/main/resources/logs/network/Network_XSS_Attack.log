@@ -1,0 +1,13 @@
+Feb 14 17:10:01 web01 apache2: 203.0.113.220 - - [14/Feb/2026:17:10:01 +0000] "GET /search.php?q=<script>alert(1)</script> HTTP/1.1" 200 1024 "-" "Mozilla/5.0"
+Feb 14 17:10:02 web01 apache2: 203.0.113.220 - - [14/Feb/2026:17:10:02 +0000] "GET /profile.php?name=%3Cscript%3Edocument.cookie%3C/script%3E HTTP/1.1" 200 998 "-" "Mozilla/5.0"
+Feb 14 17:10:03 web01 apache2: 203.0.113.220 - - [14/Feb/2026:17:10:03 +0000] "POST /comment HTTP/1.1" 500 645 "-" "Mozilla/5.0"
+Feb 14 17:10:04 web01 apache2: 203.0.113.220 - - [14/Feb/2026:17:10:04 +0000] "GET /index.php?msg=<img src=x onerror=alert(1)> HTTP/1.1" 200 1200 "-" "Mozilla/5.0"
+Feb 14 17:10:05 web01 apache2: 203.0.113.220 - - [14/Feb/2026:17:10:05 +0000] "GET /home.php?input=%3Csvg/onload=alert(1)%3E HTTP/1.1" 200 1150 "-" "Mozilla/5.0"
+
+Feb 14 17:10:06 web01 mod_security: [client 203.0.113.220] ModSecurity: Warning. Matched "<script>" at ARGS:q. [file "/etc/modsecurity/rules.conf"] [id "941100"] [msg "XSS Attack Detected"] [severity "CRITICAL"]
+Feb 14 17:10:07 web01 mod_security: [client 203.0.113.220] ModSecurity: Warning. Pattern match "(?i:onerror=)" at ARGS:msg. [id "941120"] [msg "XSS Event Handler Injection"]
+
+Feb 14 17:10:08 ids01 suricata[2550]: [1:2010937:4] ET WEB_SERVER XSS Attempt [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.220:50411 -> 192.168.1.30:80
+Feb 14 17:10:09 ids01 suricata[2550]: [1:2021045:3] ET WEB_SERVER Possible Cross Site Scripting Attempt [Classification: Web Application Attack] [Priority: 2] {TCP} 203.0.113.220:50412 -> 192.168.1.30:80
+
+Feb 14 17:10:10 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.220 DST=192.168.1.30 PROTO=TCP SPT=50415 DPT=80 SYN

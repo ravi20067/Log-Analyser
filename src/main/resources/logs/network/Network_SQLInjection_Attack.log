@@ -1,0 +1,14 @@
+Feb 14 16:40:01 web01 apache2: 203.0.113.210 - - [14/Feb/2026:16:40:01 +0000] "GET /product.php?id=1' OR '1'='1 HTTP/1.1" 500 721 "-" "Mozilla/5.0"
+Feb 14 16:40:02 web01 apache2: 203.0.113.210 - - [14/Feb/2026:16:40:02 +0000] "GET /login.php?user=admin'--&pass=test HTTP/1.1" 200 842 "-" "Mozilla/5.0"
+Feb 14 16:40:03 web01 apache2: 203.0.113.210 - - [14/Feb/2026:16:40:03 +0000] "GET /search.php?q=test UNION SELECT username,password FROM users-- HTTP/1.1" 500 932 "-" "Mozilla/5.0"
+Feb 14 16:40:04 web01 apache2: 203.0.113.210 - - [14/Feb/2026:16:40:04 +0000] "POST /login HTTP/1.1" 500 615 "-" "sqlmap/1.6.2"
+Feb 14 16:40:05 web01 apache2: 203.0.113.210 - - [14/Feb/2026:16:40:05 +0000] "GET /product.php?id=1; DROP TABLE users;-- HTTP/1.1" 500 712 "-" "Mozilla/5.0"
+
+Feb 14 16:40:06 web01 mod_security: [client 203.0.113.210] ModSecurity: Warning. Matched phrase "union select" at ARGS:q. [file "/etc/modsecurity/rules.conf"] [id "942100"] [msg "SQL Injection Attack Detected"] [severity "CRITICAL"]
+Feb 14 16:40:07 web01 mod_security: [client 203.0.113.210] ModSecurity: Warning. Pattern match "(?i:(?:or|and)\s+\d+=\d+)" at ARGS:id. [id "942110"] [msg "SQL Injection Boolean-Based Attempt"]
+
+Feb 14 16:40:08 ids01 suricata[2450]: [1:2019876:5] ET WEB_SERVER SQL Injection Attempt SELECT [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.210:50321 -> 192.168.1.30:80
+Feb 14 16:40:09 ids01 suricata[2450]: [1:2021458:4] ET WEB_SERVER Possible SQLMap User-Agent [Classification: Web Application Attack] [Priority: 1] {TCP} 203.0.113.210:50322 -> 192.168.1.30:80
+
+Feb 14 16:40:10 mysql-server mysqld: Error: You have an error in your SQL syntax near '' OR '1'='1'' at line 1
+Feb 14 16:40:11 firewall01 kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.210 DST=192.168.1.30 PROTO=TCP SPT=50325 DPT=80 SYN
